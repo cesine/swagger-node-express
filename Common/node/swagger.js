@@ -25,7 +25,7 @@ var apiVersion = "1.0";
 var resources = {};
 var validators = [];
 var appHandler = null;
-var allowedMethods = ['get', 'post', 'put', 'patch', 'delete'];
+var allowedMethods = ['get', 'post', 'put', 'patch', 'delete', 'search'];
 var allowedDataTypes = ['string', 'integer', 'boolean', 'array'];
 var params = require(__dirname + '/paramTypes.js');
 var allModels = {};
@@ -481,6 +481,14 @@ function addPatch() {
   return this;
 }
 
+// adds search handler
+
+function addSearch() {
+  addHandlers('SEARCH', arguments);
+  return this;
+}
+
+
 // adds models to swagger
 
 function addModels(models) {
@@ -696,11 +704,13 @@ exports.addGet = addGet;
 exports.addPost = addPost;
 exports.addPut = addPut;
 exports.addPatch = addPatch;
+exports.addSearch = addSearch;
 exports.addDelete = addDelete;
 exports.addGET = addGet;
 exports.addPOST = addPost;
 exports.addPUT = addPut;
 exports.addPATCH = addPatch;
+exports.addSEARCH = addSearch;
 exports.addDELETE = addDelete;
 exports.addModels = addModels;
 exports.setAppHandler = setAppHandler;

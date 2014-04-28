@@ -966,7 +966,7 @@
       myHeaders = {};
       body = params.body;
       parent = params["parent"];
-      requestContentType = "application/json";
+      requestContentType = "application/json"; //TODO add SEARCH?
       if (body && (this.type === "POST" || this.type === "PUT" || this.type === "PATCH")) {
         if (this.opts.requestContentType) {
           requestContentType = this.opts.requestContentType;
@@ -1013,7 +1013,7 @@
           }
         }
       }
-      responseContentType = null;
+      responseContentType = null; //TODO add SEARCH?
       if (this.type === "POST" || this.type === "GET" || this.type === "PATCH") {
         if (this.opts.responseContentType) {
           responseContentType = this.opts.responseContentType;
